@@ -7,12 +7,20 @@ import java.util.concurrent.*;
 public class CallingBlockingQueue {
     static int finalCount = 0;
 
+
+
+     static  void ristrictedAccess(){
+
+    }
     public static void main(String[] args) {
 
         CustomBlockingQueue<Integer> blocking = new CustomBlockingQueue(10);
 
-        ExecutorService service = Executors.newFixedThreadPool(2);
+        ExecutorService service = Executors.newFixedThreadPool(4);
         List<Future> futureList = new ArrayList<>();
+
+        //ScheduledExecutorService service1  = Executors.newSingleThreadScheduledExecutor();
+        //service1.scheduleAtFixedRate(blocking.producer(),0,1,TimeUnit.HOURS);
 
 
         Future<Integer> futureData = service.submit(new Callable<Integer>() {
@@ -58,15 +66,16 @@ public class CallingBlockingQueue {
 
 
 
-        futureList.stream().forEach(obj->{
-            try {
-                System.out.println("future result for "+ obj.get());
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            } catch (ExecutionException e) {
-                throw new RuntimeException(e);
-            }
-        });
+            futureList.stream().forEach(obj -> {
+                try {
+                    System.out.println("future result for " + obj.get());
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                } catch (ExecutionException e) {
+                    throw new RuntimeException(e);
+                }
+            });
 
-    }
+        }
+
 }
