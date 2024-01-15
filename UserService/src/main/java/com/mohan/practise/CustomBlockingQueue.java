@@ -19,7 +19,7 @@ public class CustomBlockingQueue<E> {
     }
 
     synchronized void producer(E item) throws InterruptedException {
-        while (blockingQueue.size() == maxSize) {
+        if (blockingQueue.size() == maxSize) {
             System.out.println("Queue is full waiting consumer to add some items........");
             wait();
         }
@@ -35,7 +35,7 @@ public class CustomBlockingQueue<E> {
 
 
     synchronized void consumer(E item) throws InterruptedException {
-        while (blockingQueue.isEmpty()) {
+        if (blockingQueue.isEmpty()) {
             System.out.println("Queue is Empty waiting producer to remove some items........");
             wait();
         }

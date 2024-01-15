@@ -1,4 +1,4 @@
-package com.mohan.user.service.config;
+package com.mohan.search;
 
 
 public class JavaHelper {

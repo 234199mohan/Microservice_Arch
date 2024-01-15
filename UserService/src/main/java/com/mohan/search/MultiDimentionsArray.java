@@ -1,4 +1,4 @@
-package com.mohan.user.service.config;
+package com.mohan.search;
 
 import java.util.HashMap;
 import java.util.Map;

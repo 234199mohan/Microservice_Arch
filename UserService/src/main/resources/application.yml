@@ -5,6 +5,11 @@ server:
 spring:
   config:
     import: optional:configserver:http://localhost:8085
+  cache:
+    type: redis
+    redis:
+      cache-null-values: true
+      # time-to-live: 50000
 
   datasource:
     url: jdbc:mysql://localhost:3306/microservices

@@ -28,8 +28,9 @@ public class UserConfiguration {
 
     @LoadBalanced
     @Bean
-    WebClient webClient() {
-        return WebClient.builder().baseUrl(ratingServiceurl).build();
+    WebClient.Builder webClient() {
+        return WebClient.builder();
+
     }
 
     @Bean
