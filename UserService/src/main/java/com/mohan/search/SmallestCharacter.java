@@ -3,7 +3,7 @@ package com.mohan.search;
 public class SmallestCharacter {
 
     public static char nextGreatestLetter(char[] letters, char target) {
-
+    //smallest character which is larger then target
         int end = letters.length - 1;
         int start = 0;
 

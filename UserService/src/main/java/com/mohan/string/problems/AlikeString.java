@@ -36,9 +36,27 @@ public class AlikeString {
         return false;
     }
 
+
+    static int countStringRepeating(String input){
+        String comapringString  = "mynameismohanmynameismohanmohanismoynameisyournameismohan";
+        int count = 0;
+         int index = comapringString.indexOf(input);
+         while(index!=-1){
+             count++;
+             index = comapringString.indexOf(input,index+1);
+
+         }
+         return count;
+    }
+
+
+
     public static void main(String[] args) {
         boolean value = alikeCalculate("book");
 
         System.out.println(value);
+        int count = countStringRepeating("mohan");
+
+        System.out.println(count);
     }
 }
