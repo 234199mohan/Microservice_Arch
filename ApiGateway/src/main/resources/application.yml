@@ -33,3 +33,12 @@ spring:
 #      defaultZone: http://localhost:8761/eureka
 #  instance:
 #    prefer-ip-address: true
+
+#ockta configuration for api gateway
+okta:
+  oauth2:
+    issuer: https://dev-34391077.okta.com/oauth2/default
+    audience: api://default
+    client-id: 0oaek96z0yCUzQfd75d7
+    client-secret: LU0g6aVt7s4lNroZCe1UdTaN_VlyEKAdrhJ34Bk2UCJmKrJyK5YZFyl5r4HW1XoO
+    scopes: openid, profile, email, offline-access
